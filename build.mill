@@ -1,16 +1,28 @@
 import mill._, scalalib._
 import mill.scalanativelib._
 
+/**
+  * Native version doesn't work???
+  */
+
 object hello extends ScalaNativeModule {
   def scalaVersion = "3.6.3"
   def scalaNativeVersion = "0.5.6"
   def nativeMode = "release"
 
-  override def resources = T.sources {
-    millSourcePath / "resources"
-  }
-
-  object test extends ScalaNativeTests {
-    def testFramework = "utest.runner.Framework"
-  }
 }
+
+/**
+  * JVM version does
+  */
+
+// object hello extends ScalaModule {
+//   def scalaVersion = "3.6.3"
+//   def scalaNativeVersion = "0.5.6"
+//   def nativeMode = "release"
+
+//   override def resources = T.sources {
+//     millSourcePath / "resources"
+//   }
+
+// }
